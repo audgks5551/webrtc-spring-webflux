@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>단순 SSE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<main class="flex flex-col justify-center items-center min-h-screen w-full">
+    <div id="welcome">
+        <form>
+            <input id="userId" placeholder="아이디" required type="text" />
+            <input id="roomName" placeholder="채팅방 이름" required type="text" />
+            <button>입장</button>
+        </form>
+    </div>
+    <div id="call">
+        <div id="myStream">
+            <video id="myFace" autoplay playsinline width="400" height="400"></video>
+            <div>
+                <button id="mute" class="p-2 m-2 border rounded border-black">음소거</button>
+                <button id="camera" class="p-2 m-2 border rounded border-black">카메라 끄기</button>
+                <select id="cameras"></select>
+            </div>
+        </div>
+        <video id="peersStream" autoplay playsinline width="400" height="400"></video>
+    </div>
+
+</main>
+
+<script th:src="@{/js/webrtc.js}"></script>
+</body>
+
+</html>
